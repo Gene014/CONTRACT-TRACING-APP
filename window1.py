@@ -47,5 +47,16 @@ b0.place(
     width=131,
     height=65)
 
+img1 = PhotoImage(file=f"img1.png")
+b1 = Button(
+    image=img1,
+    borderwidth=0,
+    highlightthickness=0,
+    relief="flat")
+b1.place(
+    x=240, y=345,
+    width=131,
+    height=65)
+
 window.resizable(False, False)
 window.mainloop()
