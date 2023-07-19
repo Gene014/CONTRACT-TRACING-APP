@@ -271,6 +271,48 @@ class App:
         op12q2["variable"] = self.question2
         op12q2["value"] = "None of the above"
         
+        # QUESTION 3
+        quest3 = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        quest3["font"] = ft
+        quest3["fg"] = "#333333"
+        quest3["justify"] = "left"
+        quest3["text"] = "3. Have you had exposure to a probable or confirmed case in the last 14 days?*"
+        quest3["wraplength"] = 350
+        quest3.place(x=30, y=490)
+
+        self.question3 = StringVar(value="0")
+
+        op1q3 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op1q3["font"] = ft
+        op1q3["fg"] = "#333333"
+        op1q3["justify"] = "left"
+        op1q3["text"] = "Yes"
+        op1q3["value"] = "Yes"
+        op1q3["variable"] = self.question3
+        op1q3.place(x=60, y=530)
+
+        op2q3 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op2q3["font"] = ft
+        op2q3["fg"] = "#333333"
+        op2q3["justify"] = "left"
+        op2q3["text"] = "No"
+        op2q3["value"] = "No"
+        op2q3["variable"] = self.question3
+        op2q3.place(x=60, y=550)
+
+        op3q3 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op3q3["font"] = ft
+        op3q3["fg"] = "#333333"
+        op3q3["justify"] = "left"
+        op3q3["text"] = "Uncertain"
+        op3q3["value"] = "Uncertain"
+        op3q3["variable"] = self.question3
+        op3q3.place(x=60, y=570)
+       
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
