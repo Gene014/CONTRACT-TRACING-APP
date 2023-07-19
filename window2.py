@@ -313,6 +313,98 @@ class App:
         op3q3["variable"] = self.question3
         op3q3.place(x=60, y=570)
        
+       # QUESTION 4
+        quest4 = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        quest4["font"] = ft
+        quest4["fg"] = "#333333"
+        quest4["justify"] = "left"
+        quest4["text"] = "4. Have you had in contact with somebody with body pains, headache, sore throat, fever, diarrhea, cough, colds, shortness of breath, loss of taste, or loss of smell in the past 7 days? *"
+        quest4["wraplength"] = 350
+        quest4.place(x=440, y=80)
+
+        self.question4 = StringVar(value="0")
+
+        op1q4 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op1q4["font"] = ft
+        op1q4["fg"] = "#333333"
+        op1q4["justify"] = "center"
+        op1q4["text"] = "Yes"
+        op1q4["value"] = "Yes"
+        op1q4["variable"] = self.question4
+        op1q4.place(x=490, y=130, width=85, height=25)
+
+        op2q4 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op2q4["font"] = ft
+        op2q4["fg"] = "#333333"
+        op2q4["justify"] = "center"
+        op2q4["text"] = "No"
+        op2q4["value"] = "No"
+        op2q4["variable"] = self.question4
+        op2q4.place(x=490, y=150, width=85, height=25)
+
+       # QUESTION 4
+        quest5 = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        quest5["font"] = ft
+        quest5["fg"] = "#333333"
+        quest5["justify"] = "left"
+        quest5["text"] = "5. Have you been tested for Covid-19 in the last 14 days?*"
+        quest5.place(x=430, y=180, width=332, height=30)
+
+        self.question5 = StringVar(value="0")
+
+        op1q5 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op1q5["font"] = ft
+        op1q5["fg"] = "#333333"
+        op1q5["justify"] = "center"
+        op1q5["text"] = "Yes, Possitive"
+        op1q5["value"] = "Yes, Possitive"
+        op1q5["variable"] = self.question5
+        op1q5.place(x=490, y=210)
+
+        op2q5 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op2q5["font"] = ft
+        op2q5["fg"] = "#333333"
+        op2q5["justify"] = "center"
+        op2q5["text"] = "Yes, Negative"
+        op2q5["value"] = "Yes, Negative"
+        op2q5["variable"] = self.question5
+        op2q5.place(x=490, y=230)
+
+        op3q5 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op3q5["font"] = ft
+        op3q5["fg"] = "#333333"
+        op3q5["justify"] = "center"
+        op3q5["text"] = "Yes, Pending"
+        op3q5["value"] = "Yes, Pending"
+        op3q5["variable"] = self.question5
+        op3q5.place(x=620, y=210)
+
+        op4q5 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op4q5["font"] = ft
+        op4q5["fg"] = "#333333"
+        op4q5["justify"] = "center"
+        op4q5["text"] = "No"
+        op4q5["value"] = "No"
+        op4q5["variable"] = self.question5
+        op4q5.place(x=620, y=230)
+
+        # Respondent Details
+        respo_det = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        respo_det["font"] = ft
+        respo_det["fg"] = "#333333"
+        respo_det["justify"] = "center"
+        respo_det["text"] = "Respondent Details:"
+        respo_det.place(x=530, y=270, width=135, height=30)
+        
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
