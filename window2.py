@@ -46,7 +46,7 @@ class App:
         user_name["text"] = "Name"
         user_name.place(x=30, y=60, width=220, height=30)
 
-        placeholder_text1 = "Enter Full name"
+        placeholder_text1 = "Full Name"
         user_name.insert(0, placeholder_text1)
         user_name.bind("<FocusIn>", on_entry_focus_in1)
         user_name.bind("<FocusOut>", on_entry_focus_out1)
@@ -73,7 +73,7 @@ class App:
         stdnum["text"] = "Student Number"
         stdnum.place(x=30, y=100, width=219, height=30)
 
-        placeholder_text2 = "Enter Student number"
+        placeholder_text2 = "Student Number"
         stdnum.insert(0, placeholder_text2)
         stdnum.bind("<FocusIn>", on_entry_focus_in2)
         stdnum.bind("<FocusOut>", on_entry_focus_out2)
@@ -427,7 +427,7 @@ class App:
         email_add["text"] = "Email Address"
         email_add.place(x=460, y=310, width=281, height=30)
 
-        placeholder_text3 = "Email address"
+        placeholder_text3 = "Email Address"
         email_add.insert(0, placeholder_text3)
         email_add.bind("<FocusIn>", on_entry_focus_in3)
         email_add.bind("<FocusOut>", on_entry_focus_out3)
@@ -458,6 +458,43 @@ class App:
         cont_num.insert(0, placeholder_text4)
         cont_num.bind("<FocusIn>", on_entry_focus_in4)
         cont_num.bind("<FocusOut>", on_entry_focus_out4)
+
+        # Contact Person Details
+
+        conper_det = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        conper_det["font"] = ft
+        conper_det["fg"] = "#333333"
+        conper_det["justify"] = "center"
+        conper_det["text"] = "Contact Person Details:"
+        conper_det.place(x=500, y=380, width=185, height=30)
+
+        # Contact Person Name 
+        def on_entry_focus_in5(event):
+            if conper_name.get() == placeholder_text5:
+                conper_name.delete(0, tk.END)
+                conper_name.configure(show="")
+                conper_name.configure(fg="#333333")
+
+        def on_entry_focus_out5(event):
+            if conper_name.get() == "":
+                conper_name.insert(0, placeholder_text5)
+                conper_name.configure(fg="gray")
+
+        conper_name = tk.Entry(root)
+        conper_name["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times', size=10)
+        conper_name["font"] = ft
+        conper_name["fg"] = "gray"
+        conper_name["justify"] = "left"
+        conper_name["text"] = "Contact Person Name"
+        conper_name.place(x=460, y=410, width=280, height=30)
+
+        placeholder_text5 = "Contact Person's Full Name"
+        conper_name.insert(0, placeholder_text5)
+        conper_name.bind("<FocusIn>", on_entry_focus_in5)
+        conper_name.bind("<FocusOut>", on_entry_focus_out5)
+
     
 if __name__ == "__main__":
     root = tk.Tk()
