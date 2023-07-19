@@ -4,6 +4,16 @@
 from tkinter import *
 import window2
 
+def btn_clickedNo():
+    window.destroy()
+    root = Tk()
+    app = window2.App(root)
+    root.mainloop()
+
+
+def btn_clickedYes():
+    window.destroy()
+
 window = Tk()
 
 window.geometry("800x500")
@@ -41,6 +51,7 @@ b0 = Button(
     image=img0,
     borderwidth=0,
     highlightthickness=0,
+    command=btn_clickedYes,
     relief="flat")
 b0.place(
     x=439, y=345,
@@ -52,6 +63,7 @@ b1 = Button(
     image=img1,
     borderwidth=0,
     highlightthickness=0,
+    command=btn_clickedNo,    
     relief="flat")
 b1.place(
     x=240, y=345,
