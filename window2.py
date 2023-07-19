@@ -495,6 +495,31 @@ class App:
         conper_name.bind("<FocusIn>", on_entry_focus_in5)
         conper_name.bind("<FocusOut>", on_entry_focus_out5)
 
+        # Contact Person Number
+        def on_entry_focus_in6(event):
+            if conper_num.get() == placeholder_text6:
+                conper_num.delete(0, tk.END)
+                conper_num.configure(show="")
+                conper_num.configure(fg="#333333")
+
+        def on_entry_focus_out6(event):
+            if conper_num.get() == "":
+                conper_num.insert(0, placeholder_text6)
+                conper_num.configure(fg="gray")
+
+        conper_num = tk.Entry(root)
+        conper_num["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times', size=10)
+        conper_num["font"] = ft
+        conper_num["fg"] = "gray"
+        conper_num["justify"] = "left"
+        conper_num["text"] = "Contact Person Number"
+        conper_num.place(x=460, y=450, width=280, height=30)
+
+        placeholder_text6 = "Contact Person's Phone Number"
+        conper_num.insert(0, placeholder_text6)
+        conper_num.bind("<FocusIn>", on_entry_focus_in6)
+        conper_num.bind("<FocusOut>", on_entry_focus_out6) 
     
 if __name__ == "__main__":
     root = tk.Tk()
