@@ -574,10 +574,17 @@ class App:
         rs_to_conper.insert(0, placeholder_text8)
         rs_to_conper.bind("<FocusIn>", on_entry_focus_in8)
         rs_to_conper.bind("<FocusOut>", on_entry_focus_out8)
-        
 
         # Buttons
-        
+
+        exit_button = tk.Button(root , command=quit)
+        exit_button["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        exit_button["font"] = ft
+        exit_button["fg"] = "#000000"
+        exit_button["justify"] = "center"
+        exit_button["text"] = "Exit"
+        exit_button.place(x=490, y=600, width=70, height=25)
         # Program Runner           
 if __name__ == "__main__":
     root = tk.Tk()
