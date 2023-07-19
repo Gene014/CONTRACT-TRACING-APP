@@ -595,7 +595,9 @@ class App:
             question5Answer = question5.get()
             print(question1Answer, question2Answer,
                   question3Answer, question4Answer, question5Answer)
-            
+         # f = open("database.txt", "a")
+            # f.write(
+            #     f"{question1Answer}\t{question2Answer}\t{question3Answer}\t{question4Answer}\t{question5Answer}")   
         sub_button = tk.Button(root)
         sub_button["bg"] = "#f0f0f0"
         ft = tkFont.Font(family='Times', size=10)
