@@ -18,6 +18,7 @@ window = Tk()
 
 window.geometry("800x500")
 window.configure(bg="#ffffff")
+window.title('Data Act')
 canvas = Canvas(
     window,
     bg="#ffffff",
