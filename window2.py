@@ -404,7 +404,61 @@ class App:
         respo_det["justify"] = "center"
         respo_det["text"] = "Respondent Details:"
         respo_det.place(x=530, y=270, width=135, height=30)
-        
+
+        # Email Address
+
+        def on_entry_focus_in3(event):
+            if email_add.get() == placeholder_text3:
+                email_add.delete(0, tk.END)
+                email_add.configure(show="")
+                email_add.configure(fg="#333333")
+
+        def on_entry_focus_out3(event):
+            if email_add.get() == "":
+                email_add.insert(0, placeholder_text3)
+                email_add.configure(fg="gray")
+
+        email_add = tk.Entry(root)
+        email_add["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times', size=10)
+        email_add["font"] = ft
+        email_add["fg"] = "gray"
+        email_add["justify"] = "left"
+        email_add["text"] = "Email Address"
+        email_add.place(x=460, y=310, width=281, height=30)
+
+        placeholder_text3 = "Email address"
+        email_add.insert(0, placeholder_text3)
+        email_add.bind("<FocusIn>", on_entry_focus_in3)
+        email_add.bind("<FocusOut>", on_entry_focus_out3)
+
+        # Contact Number
+
+        def on_entry_focus_in4(event):
+            if cont_num.get() == placeholder_text4:
+                cont_num.delete(0, tk.END)
+                cont_num.configure(show="")
+                cont_num.configure(fg="#333333")
+
+        def on_entry_focus_out4(event):
+            if cont_num.get() == "":
+                cont_num.insert(0, placeholder_text4)
+                cont_num.configure(fg="gray")
+
+        cont_num = tk.Entry(root)
+        cont_num["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times', size=10)
+        cont_num["font"] = ft
+        cont_num["fg"] = "gray"
+        cont_num["justify"] = "left"
+        cont_num["text"] = "Contact Number"
+        cont_num.place(x=460, y=350, width=281, height=30)
+
+        placeholder_text4 = "Contact Number"
+        cont_num.insert(0, placeholder_text4)
+        cont_num.bind("<FocusIn>", on_entry_focus_in4)
+        cont_num.bind("<FocusOut>", on_entry_focus_out4)
+    
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
