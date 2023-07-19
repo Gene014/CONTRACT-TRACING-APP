@@ -585,6 +585,28 @@ class App:
         exit_button["justify"] = "center"
         exit_button["text"] = "Exit"
         exit_button.place(x=490, y=600, width=70, height=25)
+
+        # Manipulating how submit button collect infos
+        def submitForm(question1, question2, question3, question4, question5):
+            question1Answer = question1.get()
+            question2Answer = question2.get()
+            question3Answer = question3.get()
+            question4Answer = question4.get()
+            question5Answer = question5.get()
+            print(question1Answer, question2Answer,
+                  question3Answer, question4Answer, question5Answer)
+            
+        sub_button = tk.Button(root)
+        sub_button["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        sub_button["font"] = ft
+        sub_button["fg"] = "#000000"
+        sub_button["justify"] = "center"
+        sub_button["text"] = "Submit"
+        sub_button.place(x=620, y=600, width=70, height=25)
+        sub_button["command"] = lambda: submitForm(
+            self.question1, self.question2, self.question3, self.question4, self.question5)
+
         # Program Runner           
 if __name__ == "__main__":
     root = tk.Tk()
