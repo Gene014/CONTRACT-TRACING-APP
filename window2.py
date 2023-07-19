@@ -139,6 +139,138 @@ class App:
         op5q1["variable"] = self.question1
         op5q1["value"] = "2nd Booster Shot"
         op5q1.place(x=60, y=260, height=25)
+
+        # QUESTION 2
+        quest2 = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        quest2["font"] = ft
+        quest2["fg"] = "#333333"
+        quest2["justify"] = "left"
+        quest2["text"] = "2. Are you experiencing any symptoms in the past 7 days such as:*"
+        quest2.place(x=30, y=290, width=361, height=59)
+
+        self.question2 = StringVar(value="0")
+
+        op1q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op1q2["font"] = ft
+        op1q2["fg"] = "#333333"
+        op1q2["justify"] = "left"
+        op1q2["text"] = "Fever"
+        op1q2.place(x=60, y=340)
+        op1q2["variable"] = self.question2
+        op1q2["value"] = "Fever"
+
+        op2q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op2q2["font"] = ft
+        op2q2["fg"] = "#333333"
+        op2q2["justify"] = "left"
+        op2q2["text"] = "Cough"
+        op2q2.place(x=60, y=360)
+        op2q2["variable"] = self.question2
+        op2q2["value"] = "Cough"
+
+        op3q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op3q2["font"] = ft
+        op3q2["fg"] = "#333333"
+        op3q2["justify"] = "left"
+        op3q2["text"] = "Colds"
+        op3q2.place(x=60, y=380)
+        op3q2["variable"] = self.question2
+        op3q2["value"] = "Colds"
+
+        op4q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op4q2["font"] = ft
+        op4q2["fg"] = "#333333"
+        op4q2["justify"] = "left"
+        op4q2["text"] = "Muscle/body pains"
+        op4q2.place(x=60, y=400)
+        op4q2["variable"] = self.question2
+        op4q2["value"] = "Muscle/body pains"
+
+        op5q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op5q2["font"] = ft
+        op5q2["fg"] = "#333333"
+        op5q2["justify"] = "left"
+        op5q2["text"] = "Sore throat"
+        op5q2.place(x=60, y=420)
+        op5q2["variable"] = self.question2
+        op5q2["value"] = "Sore throat"
+
+        op6q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op6q2["font"] = ft
+        op6q2["fg"] = "#333333"
+        op6q2["justify"] = "left"
+        op6q2["text"] = "Diarrhea"
+        op6q2.place(x=60, y=440)
+        op6q2["variable"] = self.question2
+        op6q2["value"] = "Diarrhea"
+
+        op7q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op7q2["font"] = ft
+        op7q2["fg"] = "#333333"
+        op7q2["justify"] = "left"
+        op7q2["text"] = "Headache"
+        op7q2.place(x=200, y=340)
+        op7q2["variable"] = self.question2
+        op7q2["value"] = "Headache"
+
+        op8q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op8q2["font"] = ft
+        op8q2["fg"] = "#333333"
+        op8q2["justify"] = "left"
+        op8q2["text"] = "Shortness of breath"
+        op8q2.place(x=200, y=360)
+        op8q2["variable"] = self.question2
+        op8q2["value"] = "Shortness of breath"
+
+        op9q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op9q2["font"] = ft
+        op9q2["fg"] = "#333333"
+        op9q2["justify"] = "left"
+        op9q2["text"] = "Difficulty of breathing"
+        op9q2.place(x=200, y=380)
+        op9q2["variable"] = self.question2
+        op9q2["value"] = "Difficulty of breathing"
+
+        op10q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op10q2["font"] = ft
+        op10q2["fg"] = "#333333"
+        op10q2["justify"] = "left"
+        op10q2["text"] = "Loss of taste"
+        op10q2.place(x=200, y=400)
+        op10q2["variable"] = self.question2
+        op10q2["value"] = "Loss of taste"
+
+        op11q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op11q2["font"] = ft
+        op11q2["fg"] = "#333333"
+        op11q2["justify"] = "left"
+        op11q2["text"] = "Loss of smell"
+        op11q2.place(x=200, y=420)
+        op11q2["variable"] = self.question2
+        op11q2["value"] = "Loss of smell"
+
+        op12q2 = tk.Radiobutton(root)
+        ft = tkFont.Font(family='Times', size=10)
+        op12q2["font"] = ft
+        op12q2["fg"] = "#333333"
+        op12q2["justify"] = "left"
+        op12q2["text"] = "None of the above"
+        op12q2.place(x=200, y=440)
+        op12q2["variable"] = self.question2
+        op12q2["value"] = "None of the above"
+        
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
