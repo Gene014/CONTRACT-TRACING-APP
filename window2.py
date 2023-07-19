@@ -574,61 +574,10 @@ class App:
         rs_to_conper.insert(0, placeholder_text8)
         rs_to_conper.bind("<FocusIn>", on_entry_focus_in8)
         rs_to_conper.bind("<FocusOut>", on_entry_focus_out8)
-
-        # Contact Person Email Address
         
-        def on_entry_focus_in7(event):
-            if conper_email.get() == placeholder_text7:
-                conper_email.delete(0, tk.END)
-                conper_email.configure(show="")
-                conper_email.configure(fg="#333333")
 
-        def on_entry_focus_out7(event):
-            if conper_email.get() == "":
-                conper_email.insert(0, placeholder_text7)
-                conper_email.configure(fg="gray")
-
-        conper_email = tk.Entry(root)
-        conper_email["borderwidth"] = "1px"
-        ft = tkFont.Font(family='Times', size=10)
-        conper_email["font"] = ft
-        conper_email["fg"] = "gray"
-        conper_email["justify"] = "left"
-        conper_email["text"] = "Contact Person Email"
-        conper_email.place(x=460, y=490, width=280, height=30)
-
-        placeholder_text7 = "Contact Person's Email Address"
-        conper_email.insert(0, placeholder_text7)
-        conper_email.bind("<FocusIn>", on_entry_focus_in7)
-        conper_email.bind("<FocusOut>", on_entry_focus_out7)
-
-        # Relationship to the Contact Person
-
-        def on_entry_focus_in8(event):
-            if rs_to_conper.get() == placeholder_text8:
-                rs_to_conper.delete(0, tk.END)
-                rs_to_conper.configure(show="")
-                rs_to_conper.configure(fg="#333333")
-
-        def on_entry_focus_out8(event):
-            if rs_to_conper.get() == "":
-                rs_to_conper.insert(0, placeholder_text8)
-                rs_to_conper.configure(fg="gray")
-
-        rs_to_conper = tk.Entry(root)
-        rs_to_conper["borderwidth"] = "1px"
-        ft = tkFont.Font(family='Times', size=10)
-        rs_to_conper["font"] = ft
-        rs_to_conper["fg"] = "gray"
-        rs_to_conper["justify"] = "left"
-        rs_to_conper["text"] = "Relationship to the Contact Person"
-        rs_to_conper.place(x=460, y=530, width=279, height=30)
-
-        placeholder_text8 = "Relationship to the Contact Person"
-        rs_to_conper.insert(0, placeholder_text8)
-        rs_to_conper.bind("<FocusIn>", on_entry_focus_in8)
-        rs_to_conper.bind("<FocusOut>", on_entry_focus_out8)
-
+        # Buttons
+        
         # Program Runner           
 if __name__ == "__main__":
     root = tk.Tk()
