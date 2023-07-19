@@ -18,7 +18,7 @@ canvas = Canvas(
     relief="ridge")
 canvas.place(x=0, y=0)
 
-background_img = PhotoImage(file=f"contact tracing\\background.png")
+background_img = PhotoImage(file=f"background.png")
 background = canvas.create_image(
     400.0, 250.0,
     image=background_img)
