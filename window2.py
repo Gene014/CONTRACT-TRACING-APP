@@ -46,7 +46,7 @@ class App:
         user_name["fg"] = "gray"
         user_name["justify"] = "left"
         user_name["text"] = "Name"
-        user_name["textvariable"] = self.un
+        user_name["textvariable"] = self.name
         user_name.place(x=30, y=60, width=220, height=30)
 
         placeholder_text1 = "Full Name"
@@ -496,6 +496,8 @@ class App:
                 conper_name.insert(0, placeholder_text5)
                 conper_name.configure(fg="gray")
 
+        self.contactpersonname = StringVar(value="")
+
         conper_name = tk.Entry(root)
         conper_name["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times', size=10)
@@ -503,6 +505,7 @@ class App:
         conper_name["fg"] = "gray"
         conper_name["justify"] = "left"
         conper_name["text"] = "Contact Person Name"
+        conper_name["textvariable"] = self.contactpersonname
         conper_name.place(x=460, y=410, width=280, height=30)
 
         placeholder_text5 = "Contact Person's Full Name"
@@ -522,6 +525,8 @@ class App:
                 conper_num.insert(0, placeholder_text6)
                 conper_num.configure(fg="gray")
 
+        self.contactpersonnumber = StringVar(value="")
+
         conper_num = tk.Entry(root)
         conper_num["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times', size=10)
@@ -529,6 +534,7 @@ class App:
         conper_num["fg"] = "gray"
         conper_num["justify"] = "left"
         conper_num["text"] = "Contact Person Number"
+        conper_num["textvariable"] = self.contactpersonnumber
         conper_num.place(x=460, y=450, width=280, height=30)
 
         placeholder_text6 = "Contact Person's Phone Number"
@@ -549,6 +555,8 @@ class App:
                 conper_email.insert(0, placeholder_text7)
                 conper_email.configure(fg="gray")
 
+        self.contactpersonemail = StringVar(value="")
+
         conper_email = tk.Entry(root)
         conper_email["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times', size=10)
@@ -556,6 +564,7 @@ class App:
         conper_email["fg"] = "gray"
         conper_email["justify"] = "left"
         conper_email["text"] = "Contact Person Email"
+        conper_email["textvariable"] = self.contactpersonemail
         conper_email.place(x=460, y=490, width=280, height=30)
 
         placeholder_text7 = "Contact Person's Email Address"
@@ -576,6 +585,8 @@ class App:
                 rs_to_conper.insert(0, placeholder_text8)
                 rs_to_conper.configure(fg="gray")
 
+        self.rstoconper = StringVar(value="")
+
         rs_to_conper = tk.Entry(root)
         rs_to_conper["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times', size=10)
@@ -583,6 +594,7 @@ class App:
         rs_to_conper["fg"] = "gray"
         rs_to_conper["justify"] = "left"
         rs_to_conper["text"] = "Relationship to the Contact Person"
+        rs_to_conper["textvariable"] = self.rstoconper
         rs_to_conper.place(x=460, y=530, width=279, height=30)
 
         placeholder_text8 = "Relationship to the Contact Person"
@@ -602,14 +614,34 @@ class App:
         exit_button.place(x=490, y=600, width=70, height=25)
 
         # Manipulating how submit button collect infos
-        def submitForm(question1, question2, question3, question4, question5):
+        def submitForm(user_name, stdnum, question1, question2, question3, question4, question5, email_add, cont_num, conper_name, conper_num, conper_email, rs_to_conper):
             question1Answer = question1.get()
             question2Answer = question2.get()
             question3Answer = question3.get()
             question4Answer = question4.get()
             question5Answer = question5.get()
-            print(question1Answer, question2Answer,
-                  question3Answer, question4Answer, question5Answer)
+
+            nameAnswer = user_name.get()
+            studentNumberAnswer = stdnum.get()
+            emailAddAnswer = email_add.get()
+            contactNumberAnswer = cont_num.get()
+            contactPersonNameAnswer = conper_name.get()
+            contactPersonNumberAnswer = conper_num.get()
+            contactPersonaEmailAddressAnswer = conper_email.get()
+            rstoconperAnswer = rs_to_conper()
+
+            if (not user_name.get() or not stdnum.get() or nameAnswer == "Enter Full Name" or studentNumberAnswer == "Enter Student number" 
+                or question1Answer == "0" or question2Answer == "0" or question3Answer == "0" or question4Answer == "0" or question5Answer == "0"
+                or not email_add.get() or not cont_num.get() or not conper_name.get() or not conper_num.get() 
+                or not conper_email.get() or not rs_to_conper.get() or emailAddAnswer == "Enter your Email Address" or contactNumberAnswer == "Enter Contact Number" 
+                or contactPersonNameAnswer == "Enter Contact Person Name" or contactPersonNumberAnswer == "Enter Contact Person Number"
+                or contactPersonaEmailAddressAnswer == "Enter Contact Person Email"
+                or rstoconperAnswer == "Enter Relationship to Contact Person" ):
+                tk.messagebox.error(title="WARNING", message="Please fill in all fields")
+            else:
+                print(nameAnswer, studentNumberAnswer, question1Answer, question2Answer,
+                      question3Answer, question4Answer, question5Answer, emailAddAnswer, contactNumberAnswer,
+                      contactPersonNameAnswer, contactPersonNumberAnswer, contactPersonaEmailAddressAnswer, rstoconperAnswer)
          # f = open("database.txt", "a")
             # f.write(
             #     f"{question1Answer}\t{question2Answer}\t{question3Answer}\t{question4Answer}\t{question5Answer}")   
