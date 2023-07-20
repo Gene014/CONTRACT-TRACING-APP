@@ -36,6 +36,8 @@ class App:
             if user_name.get() == "":
                 user_name.insert(0, placeholder_text1)
                 user_name.configure(fg="gray")
+        
+        self.name = StringVar(value="")
 
         user_name = tk.Entry(root)
         user_name["borderwidth"] = "1px"
@@ -44,6 +46,7 @@ class App:
         user_name["fg"] = "gray"
         user_name["justify"] = "left"
         user_name["text"] = "Name"
+        user_name["textvariable"] = self.un
         user_name.place(x=30, y=60, width=220, height=30)
 
         placeholder_text1 = "Full Name"
@@ -63,6 +66,9 @@ class App:
             if stdnum.get() == "":
                 stdnum.insert(0, placeholder_text2)
                 stdnum.configure(fg="gray")
+        
+        self.studentnum = StringVar(value="")
+
 
         stdnum = tk.Entry(root)
         stdnum["borderwidth"] = "1px"
@@ -71,6 +77,7 @@ class App:
         stdnum["fg"] = "gray"
         stdnum["justify"] = "left"
         stdnum["text"] = "Student Number"
+        stdnum["textvariable"] = self.studentnum
         stdnum.place(x=30, y=100, width=219, height=30)
 
         placeholder_text2 = "Student Number"
@@ -418,6 +425,9 @@ class App:
                 email_add.insert(0, placeholder_text3)
                 email_add.configure(fg="gray")
 
+        self.emailadd = StringVar(value="")
+
+
         email_add = tk.Entry(root)
         email_add["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times', size=10)
@@ -425,6 +435,7 @@ class App:
         email_add["fg"] = "gray"
         email_add["justify"] = "left"
         email_add["text"] = "Email Address"
+        email_add["textvariable"] = self.emailadd
         email_add.place(x=460, y=310, width=281, height=30)
 
         placeholder_text3 = "Email Address"
@@ -445,6 +456,9 @@ class App:
                 cont_num.insert(0, placeholder_text4)
                 cont_num.configure(fg="gray")
 
+        self.contactnumb = StringVar(value="")
+
+
         cont_num = tk.Entry(root)
         cont_num["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times', size=10)
@@ -452,6 +466,7 @@ class App:
         cont_num["fg"] = "gray"
         cont_num["justify"] = "left"
         cont_num["text"] = "Contact Number"
+        cont_num["textvariable"] = self.contactnumb
         cont_num.place(x=460, y=350, width=281, height=30)
 
         placeholder_text4 = "Contact Number"
