@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.font as tkFont
 from tkinter import StringVar
+import tkinter.messagebox
 
 # Input the generated front from the design application you created thru paper
 
@@ -23,7 +24,7 @@ class App:
         TitleBlock["fg"] = "#333333"
         TitleBlock["justify"] = "center"
         TitleBlock["text"] = "Contact Tracing Form"
-        TitleBlock.place(x=280, y=10, width=265, height=30)
+        TitleBlock.place(x=280, y=10)
 
         # NAME TEXT FIELD
         def on_entry_focus_in1(event):
@@ -47,7 +48,7 @@ class App:
         user_name["justify"] = "left"
         user_name["text"] = "Name"
         user_name["textvariable"] = self.name
-        user_name.place(x=30, y=60, width=220, height=30)
+        user_name.place(x=30, y=60, width=279, height=30)
 
         placeholder_text1 = "Full Name"
         user_name.insert(0, placeholder_text1)
@@ -78,7 +79,7 @@ class App:
         stdnum["justify"] = "left"
         stdnum["text"] = "Student Number"
         stdnum["textvariable"] = self.studentnum
-        stdnum.place(x=30, y=100, width=219, height=30)
+        stdnum.place(x=30, y=100, width=279, height=30)
 
         placeholder_text2 = "Student Number"
         stdnum.insert(0, placeholder_text2)
@@ -92,10 +93,11 @@ class App:
         quest1["fg"] = "#333333"
         quest1["justify"] = "left"
         quest1["text"] = "1. Have you been vaccinated for COVID-19? *"
-        quest1.place(x=20, y=140, width=265, height=30)
+        quest1["wraplength"]= 350
+        quest1.place(x=30, y=140)
         quest1["justify"] = "left"
 
-        self.question1 = StringVar(value="x")
+        self.question1 = StringVar(value="0")
 
         op1q1 = tk.Radiobutton(root)
         ft = tkFont.Font(family='Times', size=10)
@@ -154,7 +156,8 @@ class App:
         quest2["fg"] = "#333333"
         quest2["justify"] = "left"
         quest2["text"] = "2. Are you experiencing any symptoms in the past 7 days such as:*"
-        quest2.place(x=30, y=290, width=361, height=59)
+        quest2["wraplength"]= 350
+        quest2.place(x=30, y=290)
 
         self.question2 = StringVar(value="0")
 
@@ -328,7 +331,7 @@ class App:
         quest4["justify"] = "left"
         quest4["text"] = "4. Have you had in contact with somebody with body pains, headache, sore throat, fever, diarrhea, cough, colds, shortness of breath, loss of taste, or loss of smell in the past 7 days? *"
         quest4["wraplength"] = 350
-        quest4.place(x=440, y=80)
+        quest4.place(x=430, y=55)
 
         self.question4 = StringVar(value="0")
 
@@ -340,7 +343,7 @@ class App:
         op1q4["text"] = "Yes"
         op1q4["value"] = "Yes"
         op1q4["variable"] = self.question4
-        op1q4.place(x=490, y=130, width=85, height=25)
+        op1q4.place(x=490, y=130)
 
         op2q4 = tk.Radiobutton(root)
         ft = tkFont.Font(family='Times', size=10)
@@ -350,16 +353,16 @@ class App:
         op2q4["text"] = "No"
         op2q4["value"] = "No"
         op2q4["variable"] = self.question4
-        op2q4.place(x=490, y=150, width=85, height=25)
+        op2q4.place(x=490, y=150)
 
-       # QUESTION 4
+       # QUESTION 5
         quest5 = tk.Label(root)
         ft = tkFont.Font(family='Times', size=10)
         quest5["font"] = ft
         quest5["fg"] = "#333333"
         quest5["justify"] = "left"
         quest5["text"] = "5. Have you been tested for Covid-19 in the last 14 days?*"
-        quest5.place(x=430, y=180, width=332, height=30)
+        quest5.place(x=430, y=175, width=332, height=30)
 
         self.question5 = StringVar(value="0")
 
@@ -482,7 +485,7 @@ class App:
         conper_det["fg"] = "#333333"
         conper_det["justify"] = "center"
         conper_det["text"] = "Contact Person Details:"
-        conper_det.place(x=500, y=380, width=185, height=30)
+        conper_det.place(x=500, y=390, width=185, height=30)
 
         # Contact Person Name 
         def on_entry_focus_in5(event):
@@ -506,7 +509,7 @@ class App:
         conper_name["justify"] = "left"
         conper_name["text"] = "Contact Person Name"
         conper_name["textvariable"] = self.contactpersonname
-        conper_name.place(x=460, y=410, width=280, height=30)
+        conper_name.place(x=460, y=430, width=280, height=30)
 
         placeholder_text5 = "Contact Person's Full Name"
         conper_name.insert(0, placeholder_text5)
@@ -535,7 +538,7 @@ class App:
         conper_num["justify"] = "left"
         conper_num["text"] = "Contact Person Number"
         conper_num["textvariable"] = self.contactpersonnumber
-        conper_num.place(x=460, y=450, width=280, height=30)
+        conper_num.place(x=460, y=470, width=280, height=30)
 
         placeholder_text6 = "Contact Person's Phone Number"
         conper_num.insert(0, placeholder_text6)
@@ -565,7 +568,7 @@ class App:
         conper_email["justify"] = "left"
         conper_email["text"] = "Contact Person Email"
         conper_email["textvariable"] = self.contactpersonemail
-        conper_email.place(x=460, y=490, width=280, height=30)
+        conper_email.place(x=460, y=510, width=280, height=30)
 
         placeholder_text7 = "Contact Person's Email Address"
         conper_email.insert(0, placeholder_text7)
@@ -595,7 +598,7 @@ class App:
         rs_to_conper["justify"] = "left"
         rs_to_conper["text"] = "Relationship to the Contact Person"
         rs_to_conper["textvariable"] = self.rstoconper
-        rs_to_conper.place(x=460, y=530, width=279, height=30)
+        rs_to_conper.place(x=460, y=550, width=279, height=30)
 
         placeholder_text8 = "Relationship to the Contact Person"
         rs_to_conper.insert(0, placeholder_text8)
