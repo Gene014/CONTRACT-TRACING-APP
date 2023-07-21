@@ -606,8 +606,13 @@ class App:
         rs_to_conper.bind("<FocusOut>", on_entry_focus_out8)
 
         # Buttons
+        def iExit():
+            answer = tkinter.messagebox.askyesno(
+                title="Confirmation", message="Are you sure you want to quit?")
+            if answer:
+                root.destroy()
 
-        exit_button = tk.Button(root , command=quit)
+        exit_button = tk.Button(root , command=lambda: iExit())
         exit_button["bg"] = "#f0f0f0"
         ft = tkFont.Font(family='Times', size=10)
         exit_button["font"] = ft
@@ -615,6 +620,46 @@ class App:
         exit_button["justify"] = "center"
         exit_button["text"] = "Exit"
         exit_button.place(x=490, y=600, width=70, height=25)
+
+        def clearForm():
+
+            self.name.set("")
+            user_name.insert(0, placeholder_text1)
+            user_name.configure(fg="gray")
+
+            self.studentnum.set("")
+            stdnum.configure(fg="gray")
+            stdnum.insert(0, placeholder_text2)
+
+            self.question1.set(0)
+            self.question2.set(0)
+            self.question3.set(0)
+            self.question4.set(0)
+            self.question5.set(0)
+
+            self.emailadd.set("")
+            email_add.insert(0, placeholder_text3)
+            email_add.configure(fg="gray")
+
+            self.contactnumb.set("")
+            cont_num.insert(0, placeholder_text4)
+            cont_num.configure(fg="gray")
+
+            self.contactpersonname.set("")
+            conper_name.insert(0, placeholder_text5)
+            conper_name.configure(fg="gray")
+
+            self.contactpersonnumber.set("")
+            conper_num.insert(0, placeholder_text6)
+            conper_num.configure(fg="gray")
+
+            self.contactpersonemail.set("")
+            conper_email.insert(0, placeholder_text7)
+            conper_email.configure(fg="gray")
+
+            self.rstoconper.set("")
+            rs_to_conper.insert(0, placeholder_text8)
+            rs_to_conper.configure(fg="gray")
 
         # Manipulating how submit button collect infos
         def submitForm(user_name, stdnum, question1, question2, question3, question4, question5, email_add, cont_num, conper_name, conper_num, conper_email, rs_to_conper):
@@ -631,20 +676,26 @@ class App:
             contactPersonNameAnswer = conper_name.get()
             contactPersonNumberAnswer = conper_num.get()
             contactPersonaEmailAddressAnswer = conper_email.get()
-            rstoconperAnswer = rs_to_conper()
+            rstoconperAnswer = rs_to_conper.get()
 
-            if (not user_name.get() or not stdnum.get() or nameAnswer == "Enter Full Name" or studentNumberAnswer == "Enter Student number" 
-                or question1Answer == "0" or question2Answer == "0" or question3Answer == "0" or question4Answer == "0" or question5Answer == "0"
-                or not email_add.get() or not cont_num.get() or not conper_name.get() or not conper_num.get() 
-                or not conper_email.get() or not rs_to_conper.get() or emailAddAnswer == "Enter your Email Address" or contactNumberAnswer == "Enter Contact Number" 
-                or contactPersonNameAnswer == "Enter Contact Person Name" or contactPersonNumberAnswer == "Enter Contact Person Number"
-                or contactPersonaEmailAddressAnswer == "Enter Contact Person Email"
-                or rstoconperAnswer == "Enter Relationship to Contact Person" ):
-                tk.messagebox.error(title="WARNING", message="Please fill in all fields")
+            if (not user_name.get() or nameAnswer == "Full Name" or not stdnum.get() or studentNumberAnswer == "Student Number" or question1Answer == "0"
+                    or question2Answer == "0" or question3Answer == "0" or question4Answer == "0" or question5Answer == "0"
+                    or not email_add.get() or emailAddAnswer == "Email Address" or not cont_num.get() or contactNumberAnswer == "Contact Number"
+                    or not conper_name.get() or contactPersonNameAnswer == "Contact Person's Full Name" or not conper_num.get() or contactPersonNumberAnswer == "Contact Person's Phone Number"
+                    or not conper_email.get() or contactPersonaEmailAddressAnswer == "Contact Person's Email Address" or not rs_to_conper.get() or rstoconperAnswer == "Relationship to the Contact Person"):
+                tk.messagebox.showerror(
+                    title="WARNING", message="Please fill in all fields")
             else:
-                print(nameAnswer, studentNumberAnswer, question1Answer, question2Answer,
-                      question3Answer, question4Answer, question5Answer, emailAddAnswer, contactNumberAnswer,
-                      contactPersonNameAnswer, contactPersonNumberAnswer, contactPersonaEmailAddressAnswer, rstoconperAnswer)
+                answer = tkinter.messagebox.askyesno(
+                    title="Confirmation", message="Do you wish to proceed?")
+                if answer:
+                    print(nameAnswer, studentNumberAnswer, question1Answer, question2Answer,
+                          question3Answer, question4Answer, question5Answer, emailAddAnswer, contactNumberAnswer,
+                          contactPersonNameAnswer, contactPersonNumberAnswer, contactPersonaEmailAddressAnswer, rstoconperAnswer)
+                    tkinter.messagebox.showinfo(
+                        title="Contact Tracing App", message="Form successfully saved.")
+                    clearForm()
+                    root.focus()
          # f = open("database.txt", "a")
             # f.write(
             #     f"{question1Answer}\t{question2Answer}\t{question3Answer}\t{question4Answer}\t{question5Answer}")   
@@ -657,10 +708,11 @@ class App:
         sub_button["text"] = "Submit"
         sub_button.place(x=620, y=600, width=70, height=25)
         sub_button["command"] = lambda: submitForm(
-            self.question1, self.question2, self.question3, self.question4, self.question5)
+            self.name, self.studentnum, self.question1, self.question2, self.question3, self.question4, self.question5, self.emailadd, self. contactnumb, self.contactpersonname, self.contactpersonnumber, self.contactpersonemail, self.rstoconper)
 
         # Program Runner           
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
+    root.focus()
     root.mainloop()
