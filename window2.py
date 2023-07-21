@@ -2,7 +2,7 @@ import tkinter as tk
 import tkinter.font as tkFont
 from tkinter import StringVar
 import tkinter.messagebox
-
+import databases
 # Input the generated front from the design application you created thru paper
 
 class App:
@@ -10,7 +10,7 @@ class App:
         # setting title
         root.title("Contact Tracing App")
         width = 842
-        height = 700
+        height = 750
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
         alignstr = '%dx%d+%d+%d' % (width, height,
@@ -606,6 +606,24 @@ class App:
         rs_to_conper.bind("<FocusOut>", on_entry_focus_out8)
 
         # Buttons
+
+        def records():
+            answer = tkinter.messagebox.askyesno(
+                title="Confirmation", message="Checking Records?")
+            if answer:
+                root.destroy()
+                root2 = tk()
+                app1 = databases.datas(root2)
+                root2.mainloop()
+        recordmanager_button = tk.Button(root , command=lambda: records())
+        recordmanager_button["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        recordmanager_button["font"] = ft
+        recordmanager_button["fg"] = "#000000"
+        recordmanager_button["justify"] = "center"
+        recordmanager_button["text"] = "File Records"
+        recordmanager_button.place(x=460, y=600, width=70, height=25)
+
         def iExit():
             answer = tkinter.messagebox.askyesno(
                 title="Confirmation", message="Are you sure you want to quit?")
@@ -619,7 +637,7 @@ class App:
         exit_button["fg"] = "#000000"
         exit_button["justify"] = "center"
         exit_button["text"] = "Exit"
-        exit_button.place(x=490, y=600, width=70, height=25)
+        exit_button.place(x=560, y=600, width=70, height=25)
 
         def clearForm():
 
@@ -706,7 +724,7 @@ class App:
         sub_button["fg"] = "#000000"
         sub_button["justify"] = "center"
         sub_button["text"] = "Submit"
-        sub_button.place(x=620, y=600, width=70, height=25)
+        sub_button.place(x=660, y=600, width=70, height=25)
         sub_button["command"] = lambda: submitForm(
             self.name, self.studentnum, self.question1, self.question2, self.question3, self.question4, self.question5, self.emailadd, self. contactnumb, self.contactpersonname, self.contactpersonnumber, self.contactpersonemail, self.rstoconper)
 
