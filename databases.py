@@ -40,6 +40,27 @@ class datas():
         exit_button["text"] = "Home"
         exit_button.place(x=30, y=20, width=70, height=25)
 
+        Searchbar = tk.Label(root2)
+        ft = tkFont.Font(family='Times', size=12)
+        Searchbar["font"] = ft
+        Searchbar["fg"] = "#333333"
+        Searchbar["justify"] = "center"
+        Searchbar["text"] = "Search:"
+        Searchbar.place(x=212, y=62)
+
+        self.search_var = tk.StringVar(value="")
+
+        search_entry = tk.Entry(root2)
+        search_entry["borderwidth"] = "1px"
+        ft = tkFont.Font(family='Times', size=10)
+        search_entry["font"] = ft
+        search_entry["fg"] = "#101010"
+        search_entry["justify"] = "left"
+        search_entry["text"] = "Search"
+        search_entry["textvariable"] = self.search_var
+        search_entry.place(x=270, y=60, width=279, height=30)
+
+
 
 if __name__ == "__main__":
     root2 = tk.Tk()
