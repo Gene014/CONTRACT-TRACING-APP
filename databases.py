@@ -25,6 +25,12 @@ class datas():
         TitleBlock["text"] = "List of Informations"
         TitleBlock.place(x=280, y=10)
 
+        
+
+
+
+
+
         def iExit():
             root2.destroy()
             root = Tk()

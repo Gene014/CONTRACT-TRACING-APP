@@ -709,16 +709,17 @@ class App:
                 answer = tkinter.messagebox.askyesno(
                     title="Confirmation", message="Do you wish to proceed?")
                 if answer:
-                    print(nameAnswer, studentNumberAnswer, question1Answer, question2Answer,
-                          question3Answer, question4Answer, question5Answer, emailAddAnswer, contactNumberAnswer,
-                          contactPersonNameAnswer, contactPersonNumberAnswer, contactPersonaEmailAddressAnswer, rstoconperAnswer)
+                    f = open("database.csv", "a")
+                    f.write(
+                    f"{nameAnswer}\t{studentNumberAnswer}\t{question1Answer}\t{question2Answer}\t{question3Answer}\t{question4Answer}\t{question5Answer}\t{emailAddAnswer}\t{contactNumberAnswer}\t{contactPersonNameAnswer}\t{contactPersonNumberAnswer}\t{contactPersonaEmailAddressAnswer}\t{rstoconperAnswer}")
+                    # print(nameAnswer, studentNumberAnswer, question1Answer, question2Answer,
+                    #       question3Answer, question4Answer, question5Answer, emailAddAnswer, contactNumberAnswer,
+                    #       contactPersonNameAnswer, contactPersonNumberAnswer, contactPersonaEmailAddressAnswer, rstoconperAnswer)
                     tkinter.messagebox.showinfo(
                         title="Contact Tracing App", message="Form successfully saved.")
                     clearForm()
                     root.focus()
-         # f = open("database.txt", "a")
-            # f.write(
-            #     f"{question1Answer}\t{question2Answer}\t{question3Answer}\t{question4Answer}\t{question5Answer}")   
+                       
         sub_button = tk.Button(root)
         sub_button["bg"] = "#f0f0f0"
         ft = tkFont.Font(family='Times', size=10)
