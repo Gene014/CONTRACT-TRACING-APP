@@ -14,7 +14,7 @@ class App:
         # setting title
         root.title("Contact Tracing App")
         width = 842
-        height = 750
+        height = 650
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
         alignstr = '%dx%d+%d+%d' % (width, height,

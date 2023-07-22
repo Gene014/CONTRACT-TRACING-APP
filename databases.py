@@ -97,11 +97,11 @@ class datas():
             )
 
             treeview.heading("#0", text="ID")
-            treeview.column("#0", width=200, stretch=0)
+            treeview.column("#0", width=50, stretch=0)
 
             for column in treeview["columns"]:
                 treeview.heading(column, text=column)
-                treeview.column(column, width=150, stretch=0)
+                treeview.column(column, width=200, stretch=0)
 
         setup_treeview()
 
