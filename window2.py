@@ -3,6 +3,7 @@ import tkinter.font as tkFont
 from tkinter import StringVar
 import tkinter.messagebox
 import databases
+from tkinter import *
 # Input the generated front from the design application you created thru paper
 
 class App:
@@ -608,12 +609,13 @@ class App:
         # Buttons
 
         def records():
-            answer = tkinter.messagebox.askyesno(
+            answer = tkinter .messagebox.askyesno(
                 title="Confirmation", message="Checking Records?")
             if answer:
                 root.destroy()
-                root2 = tk()
-                app1 = databases.datas(root2)
+                root2 = Tk()
+                app = databases.datas(root2)
+                root2.focus_force()
                 root2.mainloop()
         recordmanager_button = tk.Button(root , command=lambda: records())
         recordmanager_button["bg"] = "#f0f0f0"
