@@ -3,7 +3,6 @@ from tkinter import *
 import tkinter.font as tkFont
 import window2
 
-
 class datas():
     def __init__(self, root2):
         # setting title
@@ -24,11 +23,6 @@ class datas():
         TitleBlock["justify"] = "center"
         TitleBlock["text"] = "List of Informations"
         TitleBlock.place(x=280, y=10)
-
-        
-
-
-
 
 
         def iExit():
