@@ -8,6 +8,8 @@ class DataStorage:
             #Checking file if empty
             if file.tell() == 0:
                 writer.writerow(questions)
+            
+            writer.writerow(data)
 
     def load_data(filename):
         with open(filename, 'r', newline='') as file:
