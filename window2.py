@@ -4,6 +4,9 @@ from tkinter import StringVar
 import tkinter.messagebox
 import databases
 from tkinter import *
+from datetime import datetime
+from datastorage import DataStorage
+
 # Input the generated front from the design application you created thru paper
 
 class App:
@@ -709,12 +712,43 @@ class App:
                 answer = tkinter.messagebox.askyesno(
                     title="Confirmation", message="Do you wish to proceed?")
                 if answer:
-                    f = open("database.csv", "a")
-                    f.write(
-                    f"{nameAnswer}\t{studentNumberAnswer}\t{question1Answer}\t{question2Answer}\t{question3Answer}\t{question4Answer}\t{question5Answer}\t{emailAddAnswer}\t{contactNumberAnswer}\t{contactPersonNameAnswer}\t{contactPersonNumberAnswer}\t{contactPersonaEmailAddressAnswer}\t{rstoconperAnswer}")
-                    # print(nameAnswer, studentNumberAnswer, question1Answer, question2Answer,
-                    #       question3Answer, question4Answer, question5Answer, emailAddAnswer, contactNumberAnswer,
-                    #       contactPersonNameAnswer, contactPersonNumberAnswer, contactPersonaEmailAddressAnswer, rstoconperAnswer)
+                    data = [nameAnswer,
+                            studentNumberAnswer,
+                            question1Answer,
+                            question2Answer,
+                            question3Answer,
+                            question4Answer,
+                            question5Answer,
+                            emailAddAnswer,
+                            contactNumberAnswer,
+                            contactPersonNameAnswer,
+                            contactPersonNumberAnswer,
+                            contactPersonaEmailAddressAnswer,
+                            rstoconperAnswer
+                            ]
+
+                    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    data.append(current_time)
+
+                    questions = [
+                        "Full Name",
+                        "Stud Num",
+                        "Q1",
+                        "Q2",
+                        "Q3",
+                        "Q4",
+                        "Q5",
+                        "Email add",
+                        "Contact num",
+                        "Contact Person Full Name",
+                        "Contact Person Number",
+                        "Contact Person's Email Address",
+                        "Relationship",
+                        "Submit Time"
+                    ]
+
+                    DataStorage.save_data('database.csv', questions, data)
+
                     tkinter.messagebox.showinfo(
                         title="Contact Tracing App", message="Form successfully saved.")
                     clearForm()
