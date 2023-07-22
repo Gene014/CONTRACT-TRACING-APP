@@ -21,8 +21,8 @@ class datas():
         TitleBlock["font"] = ft
         TitleBlock["fg"] = "#333333"
         TitleBlock["justify"] = "center"
-        TitleBlock["text"] = "List of Informations"
-        TitleBlock.place(x=280, y=10)
+        TitleBlock["text"] = "Database"
+        TitleBlock.place(x=350, y=10)
 
 
         def iExit():
@@ -37,8 +37,8 @@ class datas():
         exit_button["font"] = ft
         exit_button["fg"] = "#000000"
         exit_button["justify"] = "center"
-        exit_button["text"] = "Go Back"
-        exit_button.place(x=460, y=600, width=70, height=25)
+        exit_button["text"] = "Home"
+        exit_button.place(x=30, y=20, width=70, height=25)
 
 
 if __name__ == "__main__":
